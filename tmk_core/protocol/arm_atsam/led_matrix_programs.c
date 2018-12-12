@@ -101,25 +101,33 @@ led_setup_t leds_rainbow_s[] = {
 };
 
 // Auburn official RGB Colors
-#define auburn_blue_r 2
-#define auburn_blue_g 18
-#define auburn_blue_b 36
+#define auburn_blue_r 0
+#define auburn_blue_g 0
+#define auburn_blue_b 255
 
-#define auburn_orng_r 128
+#define auburn_orng_r 255
 #define auburn_orng_g 51
-#define auburn_orng_b 6
+#define auburn_orng_b 0
+
+#define fade_rgb 255
 
 led_setup_t leds_auburn_orangebase_s[] = {
-    { .hs = 0,  .he = 100, .rs = auburn_orng_r, .re = auburn_orng_r, .gs = auburn_orng_g, .ge = auburn_orng_g, .bs = auburn_orng_b, .be = auburn_orng_b, .ef = EF_NONE },
-    { .hs = 0,  .he =  15, .rs = auburn_orng_r, .re = auburn_blue_r, .gs = auburn_orng_g, .ge = auburn_blue_g, .bs = auburn_orng_b, .be = auburn_blue_b, .ef = EF_OVER | EF_SCR_R },
-    { .hs = 15, .he =  30, .rs = auburn_blue_r, .re = auburn_orng_r, .gs = auburn_blue_g, .ge = auburn_orng_g, .bs = auburn_blue_b, .be = auburn_orng_b, .ef = EF_OVER | EF_SCR_R },
+    { .hs =    0, .he =  100, .rs = auburn_orng_r, .re = auburn_orng_r, .gs = auburn_orng_g, .ge = auburn_orng_g, .bs = auburn_orng_b, .be = auburn_orng_b, .ef = EF_NONE },
+    { .hs =    0, .he =  7.5, .rs = auburn_orng_r, .re =      fade_rgb, .gs = auburn_orng_g, .ge =      fade_rgb, .bs = auburn_orng_b, .be =      fade_rgb, .ef = EF_OVER | EF_SCR_R },
+    { .hs =  7.5, .he =   15, .rs =      fade_rgb, .re = auburn_blue_r, .gs =      fade_rgb, .ge = auburn_blue_g, .bs =      fade_rgb, .be = auburn_blue_b, .ef = EF_OVER | EF_SCR_R },
+    { .hs =   15, .he = 22.5, .rs = auburn_blue_r, .re = auburn_blue_r, .gs = auburn_blue_g, .ge = auburn_blue_g, .bs = auburn_blue_b, .be = auburn_blue_b, .ef = EF_OVER | EF_SCR_R },
+    { .hs = 22.5, .he =   30, .rs = auburn_blue_r, .re =      fade_rgb, .gs = auburn_blue_g, .ge =      fade_rgb, .bs = auburn_blue_b, .be =      fade_rgb, .ef = EF_OVER | EF_SCR_R },
+    { .hs =   30, .he = 37.5, .rs =      fade_rgb, .re = auburn_orng_r, .gs =      fade_rgb, .ge = auburn_orng_g, .bs =      fade_rgb, .be = auburn_orng_b, .ef = EF_OVER | EF_SCR_R },
     { .end = 1 },
 };
 
 led_setup_t leds_auburn_bluebase_s[] = {
-    { .hs = 0,  .he = 100, .rs = auburn_blue_r, .re = auburn_blue_r, .gs = auburn_blue_g, .ge = auburn_blue_g, .bs = auburn_blue_b, .be = auburn_blue_b, .ef = EF_NONE },
-    { .hs = 0,  .he =  15, .rs = auburn_blue_r, .re = auburn_orng_r, .gs = auburn_blue_g, .ge = auburn_orng_g, .bs = auburn_blue_b, .be = auburn_orng_b, .ef = EF_OVER | EF_SCR_R },
-    { .hs = 15, .he =  30, .rs = auburn_orng_r, .re = auburn_blue_r, .gs = auburn_orng_g, .ge = auburn_blue_g, .bs = auburn_orng_b, .be = auburn_blue_b, .ef = EF_OVER | EF_SCR_R },
+    { .hs =    0, .he =  100, .rs = auburn_blue_r, .re = auburn_blue_r, .gs = auburn_blue_g, .ge = auburn_blue_g, .bs = auburn_blue_b, .be = auburn_blue_b, .ef = EF_NONE },
+    { .hs =    0, .he =  7.5, .rs = auburn_blue_r, .re =      fade_rgb, .gs = auburn_blue_g, .ge =      fade_rgb, .bs = auburn_blue_b, .be =      fade_rgb, .ef = EF_OVER | EF_SCR_R },
+    { .hs =  7.5, .he =   15, .rs =      fade_rgb, .re = auburn_orng_r, .gs =      fade_rgb, .ge = auburn_orng_g, .bs =      fade_rgb, .be = auburn_orng_b, .ef = EF_OVER | EF_SCR_R },
+    { .hs =   15, .he = 22.5, .rs = auburn_orng_r, .re = auburn_orng_r, .gs = auburn_orng_g, .ge = auburn_orng_g, .bs = auburn_orng_b, .be = auburn_orng_b, .ef = EF_OVER | EF_SCR_R },
+    { .hs = 22.5, .he =   30, .rs = auburn_orng_r, .re =      fade_rgb, .gs = auburn_orng_g, .ge =      fade_rgb, .bs = auburn_orng_b, .be =      fade_rgb, .ef = EF_OVER | EF_SCR_R },
+    { .hs =   30, .he = 37.5, .rs =      fade_rgb, .re = auburn_blue_r, .gs =      fade_rgb, .ge = auburn_orng_g, .bs =      fade_rgb, .be = auburn_blue_b, .ef = EF_OVER | EF_SCR_R },
     { .end = 1 },
 };
 
