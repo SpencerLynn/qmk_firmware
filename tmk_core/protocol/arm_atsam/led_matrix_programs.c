@@ -131,13 +131,29 @@ led_setup_t leds_auburn_bluebase_s[] = {
     { .end = 1 },
 };
 
-// Add new LED animations here using one from above as example
-// The last entry must be { .end = 1 }
-// Add the new animation name to the list below following its format
+led_setup_t leds_blue_to_purple[] = {
+    { .hs = 0,  .he =  33, .rs =   0, .re =   0, .gs =  64, .ge = 255, .bs = 255, .be = 255, .ef = EF_NONE },
+    { .hs = 33, .he =  66, .rs =   0, .re = 255, .gs = 255, .ge =   0, .bs = 255, .be = 255, .ef = EF_NONE },
+    { .hs = 66, .he = 100, .rs = 255, .re =   0, .gs =   0, .ge =  64, .bs = 255, .be = 255, .ef = EF_NONE },
+    { .end = 1 },
+};
+
+led_setup_t leds_blue_to_purple_s[] = {
+    { .hs = 0,  .he =  33, .rs =   0, .re =   0, .gs =  64, .ge = 255, .bs = 255, .be = 255, .ef = EF_OVER | EF_SCR_R },
+    { .hs = 33, .he =  66, .rs =   0, .re = 255, .gs = 255, .ge =   0, .bs = 255, .be = 255, .ef = EF_OVER | EF_SCR_R },
+    { .hs = 66, .he = 100, .rs = 255, .re =   0, .gs =   0, .ge =  64, .bs = 255, .be = 255, .ef = EF_OVER | EF_SCR_R },
+    { .end = 1 },
+};
+
+//Add new LED animations here using one from above as example
+//The last entry must be { .end = 1 }
+//Add the new animation name to the list below following its format
 
 void *led_setups[] = {
     leds_auburn_orangebase_s,
     leds_auburn_bluebase_s,
+    leds_blue_to_purple,
+    leds_blue_to_purple_s,
     leds_rainbow_s,
     leds_rainbow_ns,
     // leds_teal_salmon,
